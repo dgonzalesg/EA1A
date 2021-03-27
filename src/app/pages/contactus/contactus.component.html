@@ -27,11 +27,21 @@
             <textarea type="text" formControlName="message" class="form-control"></textarea>
         </div>
         <div class="form-group col-md-6">
-            <button class="btn btn-info"  (click)="onSubmit()">Guardar</button>
+            <button class="btn btn-info"  (click)="onSubmit()" [disabled]="!contactusForm.valid">Guardar</button>
+            |
+            <button class="btn btn-primary"  (click)="onUpdate()">Cargar Datos</button>
+            |
+            <button class="btn btn-danger"  (click)="onClean()">Limpiar</button>
         </div>
     </form>
     <br>
     <p>
-        {{contactusForm.value | json}}
+        Datos del Formulario: {{contactusForm.value | json}}
+    </p>
+    <p>
+        Formulario es valido ? : {{contactusForm.valid}}
+    </p>
+    <p>
+        Estado del Formulario: {{contactusForm.status}}
     </p>
 </div>

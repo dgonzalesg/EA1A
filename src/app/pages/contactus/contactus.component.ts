@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contactus',
@@ -9,10 +9,10 @@ import { FormBuilder } from '@angular/forms';
 export class ContactusComponent implements OnInit {
   contactusForm = this.fb.group({
     person: this.fb.group({
-      firstname: [''],
-      lastname: [''],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
     }),
-    email: [''],
+    email: ['', [Validators.required, Validators.email]],
     message: [''],
   });
 
@@ -23,7 +23,27 @@ export class ContactusComponent implements OnInit {
 
    }
    onSubmit(){
-     console.log(this.contactusForm.value);
+    if(this.contactusForm.valid){
+      console.log(this.contactusForm.valid)
+    } 
+    else{
+      alert("Formulario no valido");
+    }
+    console.log(this.contactusForm.value);
+     
+   }
+   onClean(){
+     this.contactusForm.reset();
+   }
+   onUpdate(){
+     this.contactusForm.patchValue({
+      person: {
+        firstname: "Diego",
+        lastname: "Gonzales",
+      },
+      email: "dgonzalesg@gmail.com",
+      message: "Este es un mensaje de prueba",
+     });
    }
 
   ngOnInit(): void {
