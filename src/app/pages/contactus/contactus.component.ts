@@ -8,8 +8,10 @@ import { FormBuilder } from '@angular/forms';
 })
 export class ContactusComponent implements OnInit {
   contactusForm = this.fb.group({
-    firstname: [''],
-    lastname: [''],
+    person: this.fb.group({
+      firstname: [''],
+      lastname: [''],
+    }),
     email: [''],
     message: [''],
   });
@@ -19,6 +21,9 @@ export class ContactusComponent implements OnInit {
     private fb: FormBuilder
   ) {
 
+   }
+   onSubmit(){
+     console.log(this.contactusForm.value);
    }
 
   ngOnInit(): void {
