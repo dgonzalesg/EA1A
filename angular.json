@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "EA1A"
+  "defaultProject": "EA1A",
+  "cli": {
+    "analytics": false
+  }
 }

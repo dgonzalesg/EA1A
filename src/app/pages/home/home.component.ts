@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectService } from 'src/app/services/project.service';
+
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  projects = [];
+  constructor(private readonly projectservice: ProjectService) {
+    
+   }
 
-  constructor() { }
+  getProject(){
+    this.projectservice.getProject().subscribe((rest: any) => {
+      console.log(rest.data);
+      this.projects = rest.data;
+    })
+  }
 
   ngOnInit(): void {
+    this.getProject();
   }
 
 }
