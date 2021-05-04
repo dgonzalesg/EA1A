@@ -1,0 +1,22 @@
+
+    <div class="login-dark" style="background-image: url(&quot;assets/img/backgrounds/admin-bg.jpg&quot;);">
+        <form method="post" style="background-color: rgba(30,40,51,0.75);" [formGroup]="userForm">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline" style="color: rgba(255,165,85,0.75);"></i></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" formControlName="loginUsuario" placeholder="Email" autocomplete="off"></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" formControlName="passwordUsuario" placeholder="Password" autocomplete="off"></div>
+            <div class="form-group"><input class="form-control" type="number" name="password" formControlName="idPerfil" placeholder="idPerfil" autocomplete="off"></div>
+            <div class="form-group"><input class="form-control" type="text" name="password" formControlName="nombres" placeholder="nombres" autocomplete="off"></div>
+            <div class="form-group"><input class="form-control" type="text" name="password" formControlName="apellidoPaterno" placeholder="apellidoPaterno" autocomplete="off"></div>
+            <div class="form-group"><input class="form-control" type="text" name="password" formControlName="apellidoMaterno" placeholder="apellidoMaterno" autocomplete="off"></div>
+            <div class="form-group"><input class="form-control" type="text" name="number" formControlName="documentoIdentidad" placeholder="documentoIdentidad" autocomplete="off"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" (click)="onSubmit()" style="background-color: rgba(255,165,85,0.75);font-weight: normal;">Ingresar</button></div>
+            <div class="form-group">
+                <p>
+                Datos del Formulario: {{userForm.value | json}}
+                </p>
+            </div>
+        </form>
+    </div>
+
+

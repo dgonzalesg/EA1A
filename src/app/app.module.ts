@@ -12,6 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './access/login/login.component';
 import { ProjectComponent } from './pages/project/project.component';
 import { DepartmentComponent } from './pages/department/department.component';
+import { UserComponent } from './access/user/user.component';
+import { ProjectnewComponent } from './access/projectnew/projectnew.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { DepartmentComponent } from './pages/department/department.component';
     LoginComponent,
     ProjectComponent,
     DepartmentComponent,
+    UserComponent,
+    ProjectnewComponent,
   ],
   imports: [
     BrowserModule,

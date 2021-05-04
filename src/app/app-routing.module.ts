@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './access/login/login.component';
+import { ProjectnewComponent } from './access/projectnew/projectnew.component';
+import { UserComponent } from './access/user/user.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { DepartmentComponent } from './pages/department/department.component';
@@ -19,6 +21,8 @@ const routes: Routes = [
     { path: 'project/:id', component: ProjectComponent},
     { path: 'department', component: DepartmentComponent},
     { path: 'department/:id', component: DepartmentComponent},
+    { path: 'user', component: UserComponent},
+    {path: 'newproject', component: ProjectnewComponent},
     { path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 

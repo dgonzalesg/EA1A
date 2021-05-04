@@ -14,14 +14,15 @@
         </div>
         <div class="row">
             <div class="col-sm-6 col-md-4 portfolio-item" *ngFor="let project of projects">
-                <a routerLink="/project/{{project.id}}" class="portfolio-link" data-toggle="modal">
+                <a routerLink="/project/{{project.idProyecto}}" class="portfolio-link" data-toggle="modal">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                    </div><img class="img-fluid" src="{{project.image}}"></a>
+                    </div><img class="img-fluid" src="{{project.images[0].ruta}}"></a>
                 <div class="portfolio-caption">
-                    <h4>{{project.name}}</h4>
-                    <p class="text-muted"><strong><em>{{project.price}}</em><br></strong></p>
-                    <p class="text-muted">{{project.address}}</p>
+                    <h4>{{project.nombre}}</h4>
+                    <p class="text-muted"><strong><em>Precio desde US$ {{project.precio}}</em><br></strong></p>
+                    <p class="text-muted">{{project.direccion}}</p>
+                    <P class="text-muted">{{project.ubicacion}}</P>
                 </div>
             </div>
         </div>

@@ -3,14 +3,12 @@
         <form method="post" style="background-color: rgba(30,40,51,0.75);" [formGroup]="loginForm">
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration"><i class="icon ion-ios-locked-outline" style="color: rgba(255,165,85,0.75);"></i></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" formControlName="email" placeholder="Email" autocomplete="off"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" formControlName="password" placeholder="Password" autocomplete="off"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" (click)="login()" style="background-color: rgba(255,165,85,0.75);font-weight: normal;">Ingresar</button></div>
-            <div class="form-group">
-                <p>
-                Datos del Formulario: {{loginForm.value | json}}
-                </p>
-            </div>
+            <div class="form-group"><input class="form-control" type="email" name="email" formControlName="loginUsuario" placeholder="Email" autocomplete="off"></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" formControlName="passwordUsuario" placeholder="Password" autocomplete="off"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" (click)="onSubmit()" style="background-color: rgba(255,165,85,0.75);font-weight: normal;">Ingresar</button></div>
+            <a routerLink="/user" >Registrarme</a><br>
+            <a routerLink="/newproject" >Registrar Proyecto</a>
+            
         </form>
     </div>
 

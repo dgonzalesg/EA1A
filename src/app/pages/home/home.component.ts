@@ -20,8 +20,19 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  getProjects2(){
+    const token = sessionStorage.getItem('token');
+    const header = { Authorization : 'Bearer ' + token };
+    const param = "";
+    this.projectservice.getProjects(header, param).subscribe((rest:any) =>{
+      console.log(rest);
+      this.projects = rest.data;
+    })
+  }
+
   ngOnInit(): void {
-    this.getProject();
+   // this.getProject();
+    this.getProjects2();
   }
 
 }
